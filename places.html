@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Places | Green Expo Journeys</title>
+<meta name="description" content="Sixteen places in Sri Lanka we’d take a friend, from Negombo and Kalpitiya to Jaffna, Trincomalee, tea country and the south coast.">
+<meta name="theme-color" content="#123F2C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23037F37'/%3E%3Cpath d='M9 22c0-8 6-13 15-13-1 9-6 15-13 15' fill='%23F1C40F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body data-page="places">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <!-- Logo space: replace the span with <img src="assets/logo.svg" alt="Green Expo Journeys"> when the logo is final -->
+  <a href="index.html" class="nav__brand" aria-label="Green Expo Journeys, home">
+    <span class="logo-slot" aria-hidden="true">Logo</span>
+  </a>
+  <nav aria-label="Main">
+    <ul class="nav__links" id="navLinks">
+      <li><a href="places.html" aria-current="page">Places</a></li>
+      <li><a href="journeys.html">Journeys</a></li>
+      <li><a href="when-to-go.html">When to go</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li class="nav__links-cta"><a href="plan.html">Plan a trip</a></li>
+    </ul>
+  </nav>
+  <a href="plan.html" class="btn btn--sm nav__cta">Plan a trip</a>
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span class="sr">Menu</span></button>
+</header>
+<section class="page-hero">
+  <div class="hero__media"><img src="assets/img/negombo.jpg" alt="Boats on Negombo lagoon"></div>
+  <div class="page-hero__inner">
+    <h1>Sixteen places we’d take a friend</h1>
+    <p>Scroll through the island coast by coast. Add the places you like and we’ll work out the order, the drives and where to stay.</p>
+  </div>
+</section>
+
+<main id="main">
+<section class="places" id="places" aria-label="Places map and list">
+  <div class="wrap places__layout">
+    <div class="places__mapcol">
+      <div class="places__map">
+        <svg viewBox="0 0 420 620" class="map" id="map" role="img" aria-label="Map of Sri Lanka showing the places listed">
+          <path class="map__island" d="M372.3,427L372.3,429.5L373.9,434.8L374.4,437.8L373.3,443.8L366.5,467.3L365.9,469.6L365.9,472.8L365.4,475.6L363.3,479.6L362.7,481.6L362.2,484.1L359,488.6L358,490.6L359,494.1L357.5,498.6L343.7,520.3L338.9,525.1L330.5,531.1L327.3,532.1L323.6,534.1L296.6,555.5L291.3,558.3L273.3,564.8L273.3,562.5L272.2,561.5L271.7,561.8L270.6,562L270.1,563L270.1,565.5L269,566.5L268,566.8L266.4,567.5L263.2,569.5L260,571L244.7,574.3L237.3,576.8L228.8,578.3L225.1,579.8L223,582.8L219.3,582L216.6,583L215,583.5L209.7,587.8L203.9,592L201.3,595L195.4,594.8L192.8,595L190.7,595.8L188.6,597L185.4,599.5L184.3,599.8L183.3,600L180.6,599L178,597.8L176.4,597.3L175.3,597L166.8,598L164.7,597.5L163.1,596.3L162.6,594.8L162.1,593.8L161.6,593L158.9,594.5L156.8,594.8L152.6,594L152,594L151,593.8L150.4,593L149.9,592.3L148.8,592L148.3,592.3L147.8,592.8L147.3,593L146.2,593L146.2,592.8L145.7,592.8L145.1,591.3L144.6,591L144.1,591L143,590.5L137.2,588.3L134.6,587.8L132.4,587.5L129.3,584.8L128.7,584.5L127.1,583.8L126.1,585L123.4,582.8L111.3,570L110.2,569.3L110.2,569L110.2,568.5L109.7,568L109.7,566.8L109.7,566L109.1,565.5L107.5,563.8L100.7,549.3L100.7,548.1L100.7,546.8L100.7,545.6L100.7,544.8L99.1,542.3L98,535.3L95.4,530.6L93.8,523.6L92.7,521.1L92.7,520.8L92.2,520.3L91.1,519.8L91.1,519.1L91.1,518.1L91.7,517.8L92.7,518.1L91.7,510.1L91.7,509.6L88.5,501.6L75.8,469.3L74.2,458.1L73.7,457.1L73.7,446.3L74.2,446L75.3,442.5L75.8,440.8L75.8,439L68.9,414L70,410.3L69.4,412.5L70.5,414L71,415L71.5,416.3L73.1,421.3L73.7,422.5L74.7,422.5L74.7,421L75.3,420.5L75.8,420.5L75.8,416L75.3,414L74.7,412.3L74.2,411.8L72.1,411.5L71,410.8L71,410.5L70.5,409.5L71,408.5L71.5,407.3L71.5,406.3L64.7,353.4L63.6,351.4L64.1,350.7L64.7,350.7L65.7,351.4L65.7,348.9L66.8,345.9L66.8,344.4L67.3,342.9L66.3,340.6L65.2,338.6L64.7,337.4L64.7,335.9L64.7,330.6L61.5,313.8L61,312.1L59.4,308.3L57.8,300.5L55.1,294.5L51.4,277.7L51.4,272.9L52,273.4L52.5,273.4L52.5,273.9L53,271.2L52.5,262.4L51.4,259.9L54.1,258.4L56.2,255.4L57.8,251.9L58.8,249.1L59.4,247.3L63.6,240.3L63.6,240.6L61.5,245.6L58.8,250.6L59.4,251.9L59.4,252.1L60.4,253.1L62,253.9L63.6,253.9L62,257.9L61,260.9L59.9,261.4L59.4,261.4L58.8,261.9L58.8,263.4L58.8,266.9L58.8,267.9L56.2,276L56.2,277.5L56.2,280.5L58.8,283.5L59.9,284.2L56.7,290.5L61.5,293.8L68.4,294.5L71.5,292L71,289.2L70,287.2L69.4,286.5L68.9,285.7L67.8,284.2L66.3,283.2L65.7,281.5L70.5,272.2L70.5,270.4L70,269.2L69.4,268.2L68.9,266.9L68.4,265.2L68.9,262.2L68.9,260.9L68.9,260.6L68.4,259.4L67.8,259.1L67.8,258.9L67.3,258.4L67.8,256.6L68.4,255.4L70.5,252.9L70.5,251.1L71,248.1L72.6,241.8L73.7,227.3L74.7,225.8L75.8,224.8L76.3,223.8L76.8,221.7L76.8,215.5L77.4,212.5L79.5,210.4L82.1,208.9L83.7,206.9L84.3,206.2L85.8,201.4L85.8,201.2L86.4,199.9L87.4,196.9L89,182.3L85.3,173.3L85.8,171.5L85.8,160.9L85.3,157.4L85.3,155.7L84.3,154.4L83.7,152.9L85.3,152.1L86.9,151.6L88.5,151.4L97,143.6L101.2,141.3L103.3,139.8L104.4,136.1L106,132.5L107,127.3L111.8,114.9L111.8,114.2L112.3,112.4L113.4,108.9L113.4,100.3L113.4,98.8L113.4,98.1L111.8,97.8L107.5,95.6L106,94L104.9,91.3L104.9,90.8L103.8,87.2L103.8,85.5L106,83.5L109.1,82L112.8,80.7L115.5,80.2L117.1,79.7L120.3,75.2L120.3,74.9L120.8,74.7L122.4,73.9L123.4,73.4L125,73.2L124,70.6L122.9,69.4L121.8,68.4L119.7,66.1L117.1,64.1L106,57.5L103.8,54.8L108.6,55L113.4,56.8L121.8,62.1L130.3,64.1L133,65.6L136.1,68.6L137.2,70.1L135.1,71.1L135.6,72.1L136.1,73.2L135.1,74.2L138.3,76.2L145.7,74.4L158.9,69.1L162.6,69.6L170.6,71.6L179.6,75.9L186.4,77.2L176.4,70.4L173.2,68.6L170,68.1L169.5,67.9L169,67.6L166.3,65.6L165.3,65.1L164.7,64.8L163.1,64.8L161.6,65.1L160.5,65.3L160,65.6L160,66.4L159.4,66.6L157.3,65.1L156.8,64.8L151.5,65.1L150.4,64.6L139.8,55.5L135.6,52.8L134,52L126.1,48.7L123.4,47L121.8,47L121.8,50.7L122.9,51.7L124.5,53L125.6,54.5L124.5,56.3L123.4,56.5L122.4,56L121.3,55.3L118.7,53.8L113.4,49L110.2,47.7L111.8,49.5L114.4,52L116,53.8L112.3,53L109.1,51.5L101.7,47.7L96.4,43.2L92.7,41.9L92.7,41.7L91.1,40.9L90.1,40.4L90.1,41.4L88.5,40.4L88,38.9L87.4,37.1L86.9,35.4L85.8,33.6L85.3,32.9L83.7,30.8L82.7,29.1L85.8,27.6L91.7,22.3L94.3,21L106,22L111.8,21.3L113.9,21.5L115,23.5L115,26.8L115.5,27.8L116.6,28.3L117.6,28.3L121.3,29.3L121.8,29.8L122.9,31.1L124.5,31.1L125.6,30.6L126.1,30.3L126.6,30.3L127.1,30.3L128.2,30.8L128.7,31.3L133,35.6L146.2,50L150.4,52.8L161,57.8L161.6,57.8L161.6,56.8L156.3,54L143,43.4L132.4,31.1L127.1,28.3L118.7,26.3L116.6,24.5L116,22.3L119.2,21L120.3,20.8L123.4,20.3L129.8,20L132.4,20.5L134.6,22L135.6,26.8L137.2,28.8L156.3,51.7L159.4,53.8L165.3,57L205.5,90L206,90.3L207.1,92L208.7,94.3L211.9,97.1L213.4,99.8L211.9,100.8L210.8,100.3L210.8,100.1L209.2,98.3L208.1,97.8L205.5,97.3L204.4,97.6L205,98.8L205.5,99.3L212.9,106.4L216.1,108.1L214.5,106.1L214,104.4L214.5,103.4L216.6,102.9L217.1,103.4L218.7,108.1L220.3,110.9L226.1,122L224.6,121.7L221.9,120.5L219.8,120.5L218.7,122.5L219.8,123.2L222.4,123.5L224.6,125L225.1,128.3L226.1,128.3L226.1,127.5L226.7,127L227.2,126.8L228.3,126.2L228.8,129.3L228.8,129.8L230.9,134.5L233.6,138.8L236.7,140.6L236.7,140.8L237.3,141.1L237.3,142.1L236.2,143.1L235.1,143.6L234.6,143.1L233,140.6L231.4,139.6L227.2,138.6L225.1,137.6L226.1,139.1L226.7,139.8L232,144.9L232,147.6L233.6,148.9L232,150.4L230.9,152.1L233,153.9L235.7,153.7L237.8,151.9L238.9,149.1L239.9,146.6L245.2,153.2L250,161.2L252.1,163.2L254.7,164L256.9,165.7L260,173.5L261.1,174.3L261.6,175.3L265.3,176.8L266.9,180.8L269,188.6L269.6,187.1L270.1,186.6L270.6,186.8L272.2,187.6L271.7,188.8L275.9,193.4L277.5,195.6L277.5,198.4L276.4,199.4L274.9,200.1L273.3,201.7L274.3,201.4L275.4,201.2L275.9,200.9L276.4,200.6L279.6,207.7L280.2,211.2L276.4,211.9L277,209.4L275.9,207.7L274.3,207.2L273.3,209.9L273.8,211.9L274.9,213.2L275.4,214.7L274.3,217L273.3,216.5L271.7,215.2L269,213.5L266.4,213L264.3,214L262.2,216.5L262.7,218L265.3,217.5L268.5,215L270.6,217.2L272.2,220L274.3,222.2L278,223.2L284.4,223L287,221.5L285.4,218L289.2,216.2L290.7,215.7L292.3,216L293.9,217L296,218.7L297.1,220.7L298.2,226.8L300.3,234.3L300.3,236.3L300.3,238.3L298.7,237.1L296.6,233L295,232.3L295,233.3L295.5,238.1L295.5,238.6L296.6,240.3L297.6,240.8L298.2,241.3L300.3,241.3L301.9,242.1L302.9,247.6L304,251.6L304,252.4L304.5,254.6L305,256.1L308.2,266.7L309.3,273.4L306.6,277.2L305,270.9L305,270.2L302.4,263.9L301.3,263.9L301.3,268.7L301.3,270.2L301.3,270.4L301.3,271.2L301.3,272.2L301.9,272.7L303.4,273.2L303.4,273.4L304.5,276.7L307.2,278.5L309.8,278.5L310.9,275.2L311.4,275.2L312.5,277L313,277.5L314,282.7L315.1,284.7L316.7,286.5L317.7,288.2L319.9,292.5L320.4,291.8L321.5,291L322,290.5L322.5,291.8L322,292.5L322,293L322.5,293.5L322.5,293.8L322.5,294.5L323.6,293.8L325.2,293L325.7,292.5L326.2,293.3L326.2,294.3L326.2,295.5L325.7,296.8L325.7,297.8L325.7,298.5L326.7,300.5L328.3,302L329.9,302.8L331,304.8L329.9,304.8L329.9,305L329.4,305.3L328.9,305.5L328.3,307.3L327.8,308.8L329.4,313.8L330.5,315.1L332.6,317.3L335.7,316.8L336.8,316.8L337.9,319.8L338.9,321.8L339.5,322.3L345.8,329.1L347.9,332.4L347.9,335.1L344.7,336.1L343.2,335.1L340,330.6L337.9,328.9L335.2,328.1L333.6,328.1L332,329.9L331,333.1L332.6,333.9L334.2,334.1L335.7,333.6L336.8,332.1L338.4,332.6L340,333.4L340.5,334.1L341,334.6L341,336.1L342.6,338.1L344.7,339.9L346.3,341.6L347.9,344.4L346.9,345.1L346.9,345.9L347.4,347.2L347.9,348.4L349,347.4L348.5,345.4L350,345.9L353.2,348.4L354.3,349.7L356.9,356.4L356.9,356.9L355.9,360.7L355.9,360.9L355.9,361.2L356.9,362.4L356.9,363.2L356.4,364.2L355.3,364.9L354.8,365.9L355.3,367.2L355.9,368.2L356.4,368.9L356.9,369.7L358,370.7L356.4,372L356.4,372.5L356.4,373L358,373.2L359,371.7L360.1,371.7L361.2,377.7L361.2,380L362.2,380L362.2,377.7L362.7,375.7L363.3,374L363.8,372.7L363.8,371.7L363.8,371.5L363.8,370.4L363.8,370.2L364.9,370.4L365.9,371.7L366.5,373L367,376L369.1,379.7L372.8,392.2ZM351.6,342.9L351.6,341.1L351.1,340.1L350.6,338.6L350,337.1L350,335.6L350.6,334.1L350.6,332.9L350,331.1L351.6,332.9L353.7,337.1L354.8,339.1L355.3,339.9L356.4,343.6L360.1,349.4L361.7,351.9L364.3,364.9L364.3,367.9L362.2,369.7L360.1,368.2L359.6,367.4L359,367.2L359,366.4L359,365.7L359,365.4L359.6,355.9L359,352.7L357.5,351.4L356.9,350.2ZM54.1,132.5L52.5,131.8L52,130.3L52,129L54.1,128.3L61,128.3L63.6,129L66.8,129.8L73.1,132.3L79,135.8L83.7,140.6L81.6,140.1L77.4,138.1L74.7,137.6L78.4,141.8L81.6,145.4L82.7,147.6L79.5,147.1L76.8,145.4L75.3,143.6L74.2,142.6L72.6,141.8L66.8,136.3L63.6,135.1L61,133.8L58.3,133L57.3,132.8ZM56.7,69.1L55.7,70.4L54.1,71.4L50.4,71.6L47.2,70.4L45.6,68.6L45.6,62.6L46.1,61.1L47.2,61.1L47.7,62.3L48.8,64.1L50.9,64.8L54.1,65.1L55.1,65.6ZM81.1,51.7L78.4,50L76.3,46.7L72.6,39.4L74.2,36.9L74.7,33.6L75.8,31.1L79,30.3L80.5,30.8L80.5,32.1L80,33.9L80,35.9L80,37.9L80,39.4L80,39.7L80,39.9L80.5,41.2L81.6,41.9L82.1,42.4L82.7,42.7L85.3,42.4L85.8,42.9L85.8,45.2L86.4,46.2L88,47.2L90.6,48.2L92.2,49.2L92.2,49.5L92.7,50.7L91.7,51.7L90.1,51.7L88,51L86.4,50.2L85.3,50L82.7,51.5Z"/>
+          <path class="map__loop" id="mapLoop" d=""/>
+          <path class="map__trip" id="mapTrip" d=""/>
+          <g id="mapStops"></g>
+        </svg>
+        <div class="regions" id="regionNav" aria-label="Jump to a region"></div>
+      </div>
+    </div>
+    <div class="places__list" id="placesList"></div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <span class="logo-slot logo-slot--foot" aria-hidden="true">Logo</span>
+      <p>Green Expo Journeys is part of S N S Ceylon Exports (Pvt) Ltd, exporters of Sri Lankan coconut, spice, tea and traditional foods since 2012.</p>
+    </div>
+    <div>
+      <p class="foot__h">Visit</p>
+      <ul><li><a href="places.html">Places</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="when-to-go.html">When to go</a></li><li><a href="about.html">About us</a></li><li><a href="plan.html">Plan a trip</a></li></ul>
+    </div>
+    <div>
+      <p class="foot__h">Contact</p>
+      <ul><li><a href="mailto:info@greenexpolk.com">info@greenexpolk.com</a></li><li><a href="https://wa.me/94711486677">+94 71 148 6677</a></li><li>85 Katukenda East, Dankotuwa</li><li><a href="https://www.greenexpolk.com">Our export business ↗</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot__credits">
+    <p>© <span id="year">2026</span> S N S Ceylon Exports (Pvt) Ltd.</p>
+    <details>
+      <summary>Photo credits</summary>
+      <p>All from Wikimedia Commons. Tea estate: Bergentroll (CC0). Tea pluckers: Vyacheslav Argenberg (CC BY 4.0). Sigiriya: Bernard Gagnon (CC BY-SA 3.0). Nine Arch Bridge: Ishan Shanuka (CC BY-SA 4.0). Galle Fort: A.Savin (FAL). Leopard: Eli Solidum (CC BY-SA 4.0). Mirissa: Ji-Elle (CC BY-SA 3.0). Cinnamon: Salix Oculus (CC BY-SA 4.0). Temple of the Tooth: Philip Nalangan (CC BY-SA 4.0). King coconut: Raveendran Mathusha (CC BY-SA 4.0). Stilt fishermen: Jakub Hałun (CC BY 4.0). Airport: Dilubaba (public domain). Negombo lagoon: Deshan Ruhunage (CC BY-SA 4.0). Munneswaram: Leon Meerson (CC BY-SA 2.0). Puttalam lagoon: Rehman Abubakr (CC BY-SA 4.0). Kalpitiya dolphins: Woshitha (CC BY-SA 4.0). Nallur Kovil: Gane Kumaraswamy (CC BY-SA 2.0). Jaffna Fort: Rehman Abubakr (CC BY-SA 4.0). Pigeon Island: AntanO (CC BY-SA 4.0). Map data: Natural Earth.</p>
+    </details>
+  </div>
+</footer>
+
+<div class="tray" id="tray" hidden>
+  <p><strong id="trayCount">0</strong> <span id="trayWord">places</span> in your trip</p>
+  <a href="plan.html" class="btn btn--sm">Send to us</a>
+  <button type="button" class="tray__clear" id="trayClear">Clear</button>
+</div>
+
+<button type="button" class="totop" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<a class="wa" href="https://wa.me/94711486677" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5Zm-3 3.5c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.1-.4-.3-.4-.5-.4H9Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

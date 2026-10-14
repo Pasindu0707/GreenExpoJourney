@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan a trip | Green Expo Journeys</title>
+<meta name="description" content="Tell us what you have in mind and we’ll reply within a day with a plan and a price.">
+<meta name="theme-color" content="#123F2C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23037F37'/%3E%3Cpath d='M9 22c0-8 6-13 15-13-1 9-6 15-13 15' fill='%23F1C40F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body data-page="plan">
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <!-- Logo space: replace the span with <img src="assets/logo.svg" alt="Green Expo Journeys"> when the logo is final -->
+  <a href="index.html" class="nav__brand" aria-label="Green Expo Journeys, home">
+    <span class="logo-slot" aria-hidden="true">Logo</span>
+  </a>
+  <nav aria-label="Main">
+    <ul class="nav__links" id="navLinks">
+      <li><a href="places.html">Places</a></li>
+      <li><a href="journeys.html">Journeys</a></li>
+      <li><a href="when-to-go.html">When to go</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li class="nav__links-cta"><a href="plan.html" aria-current="page">Plan a trip</a></li>
+    </ul>
+  </nav>
+  <a href="plan.html" class="btn btn--sm nav__cta" aria-current="page">Plan a trip</a>
+  <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span class="sr">Menu</span></button>
+</header>
+
+<main id="main">
+<section class="plan plan--page">
+  <div class="wrap plan__wrap">
+    <div class="plan__intro">
+      <h1>Tell us what you have in mind</h1>
+      <p>A rough idea is enough. We reply within a day with a plan and a price, and there’s no booking fee.</p>
+      <ul class="plan__contact">
+        <li><span>Email</span><a href="mailto:info@greenexpolk.com">info@greenexpolk.com</a></li>
+        <li><span>Call or WhatsApp</span><a href="https://wa.me/94711486677">+94 71 148 6677</a></li>
+        <li><span>Office</span>85 Katukenda East, Dankotuwa</li>
+      </ul>
+    </div>
+    <form class="form" id="planForm" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field field--half">
+        <label for="f-month">Month of travel</label>
+        <select id="f-month" name="month">
+          <option>Not sure yet</option>
+          <option>January</option><option>February</option><option>March</option><option>April</option>
+          <option>May</option><option>June</option><option>July</option><option>August</option>
+          <option>September</option><option>October</option><option>November</option><option>December</option>
+        </select>
+      </div>
+      <div class="field field--half">
+        <label for="f-days">Days on the island</label>
+        <input id="f-days" name="days" type="number" min="1" max="60" value="10">
+      </div>
+      <div class="field">
+        <label for="f-trip">Starting point</label>
+        <select id="f-trip" name="trip">
+          <option value="">Something tailor-made</option>
+          <option value="classic">The Classic Loop (12 days)</option>
+          <option value="lagoons">Lagoons and Dolphins (4 days)</option>
+          <option value="north">Jaffna and the East (6 days)</option>
+          <option value="tea">Tea Country by Train (5 days)</option>
+          <option value="south">Leopards and the South (6 days)</option>
+          <option value="day">A Day with Us (1 day)</option>
+        </select>
+      </div>
+      <div class="field">
+        <p class="field__label">Places you picked</p>
+        <ul class="picked" id="pickedList"></ul>
+      </div>
+      <div class="field">
+        <label for="f-msg">Anything else? <span class="opt">(optional)</span></label>
+        <textarea id="f-msg" name="message" rows="3" placeholder="Travelling with kids, a special occasion, food you don’t eat…"></textarea>
+      </div>
+      <p class="form__error" id="formError" role="alert"></p>
+      <button class="btn btn--block" type="submit">Email my enquiry</button>
+      <p class="form__hint">This opens your email app with everything filled in.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <span class="logo-slot logo-slot--foot" aria-hidden="true">Logo</span>
+      <p>Green Expo Journeys is part of S N S Ceylon Exports (Pvt) Ltd, exporters of Sri Lankan coconut, spice, tea and traditional foods since 2012.</p>
+    </div>
+    <div>
+      <p class="foot__h">Visit</p>
+      <ul><li><a href="places.html">Places</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="when-to-go.html">When to go</a></li><li><a href="about.html">About us</a></li><li><a href="plan.html">Plan a trip</a></li></ul>
+    </div>
+    <div>
+      <p class="foot__h">Contact</p>
+      <ul><li><a href="mailto:info@greenexpolk.com">info@greenexpolk.com</a></li><li><a href="https://wa.me/94711486677">+94 71 148 6677</a></li><li>85 Katukenda East, Dankotuwa</li><li><a href="https://www.greenexpolk.com">Our export business ↗</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap foot__credits">
+    <p>© <span id="year">2026</span> S N S Ceylon Exports (Pvt) Ltd.</p>
+    <details>
+      <summary>Photo credits</summary>
+      <p>All from Wikimedia Commons. Tea estate: Bergentroll (CC0). Tea pluckers: Vyacheslav Argenberg (CC BY 4.0). Sigiriya: Bernard Gagnon (CC BY-SA 3.0). Nine Arch Bridge: Ishan Shanuka (CC BY-SA 4.0). Galle Fort: A.Savin (FAL). Leopard: Eli Solidum (CC BY-SA 4.0). Mirissa: Ji-Elle (CC BY-SA 3.0). Cinnamon: Salix Oculus (CC BY-SA 4.0). Temple of the Tooth: Philip Nalangan (CC BY-SA 4.0). King coconut: Raveendran Mathusha (CC BY-SA 4.0). Stilt fishermen: Jakub Hałun (CC BY 4.0). Airport: Dilubaba (public domain). Negombo lagoon: Deshan Ruhunage (CC BY-SA 4.0). Munneswaram: Leon Meerson (CC BY-SA 2.0). Puttalam lagoon: Rehman Abubakr (CC BY-SA 4.0). Kalpitiya dolphins: Woshitha (CC BY-SA 4.0). Nallur Kovil: Gane Kumaraswamy (CC BY-SA 2.0). Jaffna Fort: Rehman Abubakr (CC BY-SA 4.0). Pigeon Island: AntanO (CC BY-SA 4.0). Map data: Natural Earth.</p>
+    </details>
+  </div>
+</footer>
+
+<div class="tray" id="tray" hidden>
+  <p><strong id="trayCount">0</strong> <span id="trayWord">places</span> in your trip</p>
+  <a href="plan.html" class="btn btn--sm">Send to us</a>
+  <button type="button" class="tray__clear" id="trayClear">Clear</button>
+</div>
+
+<button type="button" class="totop" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<a class="wa" href="https://wa.me/94711486677" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5Zm-3 3.5c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.1-.4-.3-.4-.5-.4H9Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
