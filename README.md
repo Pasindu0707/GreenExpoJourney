@@ -22,11 +22,11 @@ The map pin, the list card, the region zoom and the trip line all update automat
 
 ## Brand
 Taken from greenexpolk.com: green `#037F37`, yellow `#F1C40F`, brown `#3D2811`, cyan `#01ADD3`.
-Fonts: Schibsted Grotesk (headings, UI), Source Serif 4 (reading), Noto Serif Sinhala/Tamil (greeting).
+Fonts: Source Serif 4 (headings), Schibsted Grotesk (text and UI), Noto Serif Sinhala/Tamil (greeting).
 All colors live as CSS variables at the top of `css/style.css` — swap them when the final branding is decided.
 
 ## Before launch
 - Journey itineraries, drive times and place descriptions are researched proposals — confirm with operations; add prices if wanted.
 - Enquiry form opens the visitor's email app (mailto). Swap for Formspree/Netlify Forms or a backend for proper capture.
 - Photos are Wikimedia Commons (credits in footer, several CC BY-SA). Replace with your own photography when possible.
-- Logo: each page has a dashed "Logo" space in the header and footer (`.logo-slot`). Replace it with `<img src="assets/logo.svg" alt="Green Expo Journeys">` once the logo is final.
+- Logo: each page shows a temporary typed wordmark ("Green Expo Journeys", `.wordmark` in the header and footer). Replace it with `<img src="assets/logo.svg" alt="Green Expo Journeys">` once the logo is final.

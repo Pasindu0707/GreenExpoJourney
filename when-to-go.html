@@ -2,94 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>When to go | Green Expo Journeys</title>
-<meta name="description" content="When to visit each part of Sri Lanka, month by month: monsoons, beaches, whales, dolphins, safaris and festivals.">
-<meta name="theme-color" content="#123F2C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23037F37'/%3E%3Cpath d='M9 22c0-8 6-13 15-13-1 9-6 15-13 15' fill='%23F1C40F'/%3E%3C/svg%3E">
+<meta name="description" content="When to visit each part of Sri Lanka, month by month: monsoons, beaches, whales, dolphins and safaris.">
+<meta name="theme-color" content="#14332A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314332A'/%3E%3Cpath d='M9 22c0-8 6-13 15-13-1 9-6 15-13 15' fill='%23F1C40F'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..500;1,8..60,300..400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head><body data-page="when-to-go">
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" id="nav">
-  <!-- Logo space: replace the span with <img src="assets/logo.svg" alt="Green Expo Journeys"> when the logo is final -->
-  <a href="index.html" class="nav__brand" aria-label="Green Expo Journeys, home">
-    <span class="logo-slot" aria-hidden="true">Logo</span>
-  </a>
+  <!-- Temporary wordmark. Replace with <img src="assets/logo.svg" alt="Green Expo Journeys"> when the logo is final. -->
+  <a href="index.html" class="nav__brand" aria-label="Green Expo Journeys, home"><span class="wordmark"><span class="wordmark__name">Green Expo</span><span class="wordmark__sub">Journeys</span></span></a>
   <nav aria-label="Main">
     <ul class="nav__links" id="navLinks">
       <li><a href="places.html">Places</a></li>
       <li><a href="journeys.html">Journeys</a></li>
       <li><a href="when-to-go.html" aria-current="page">When to go</a></li>
-      <li><a href="about.html">About us</a></li>
+      <li><a href="about.html">About</a></li>
       <li class="nav__links-cta"><a href="plan.html">Plan a trip</a></li>
     </ul>
   </nav>
-  <a href="plan.html" class="btn btn--sm nav__cta">Plan a trip</a>
+  <a href="plan.html" class="btn btn--line btn--sm nav__cta">Plan a trip</a>
   <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span class="sr">Menu</span></button>
 </header>
 <section class="page-hero">
   <div class="hero__media"><img src="assets/img/mirissa.jpg" alt="Mirissa beach"></div>
   <div class="page-hero__inner">
-    <h1>When to go</h1>
-    <p>Two monsoons hit opposite sides of the island, so somewhere is always dry. Pick your month to see where.</p>
+    <p class="kicker">When to go</p>
+    <h1>Somewhere is always in season</h1>
+    <p>Pick a month to see where.</p>
   </div>
 </section>
 
 <main id="main">
-<section class="seasons">
+<section class="band">
   <div class="wrap">
     <div class="months" role="tablist" aria-label="Month" id="months"></div>
     <div class="season-table" id="seasonTable" aria-live="polite"></div>
-    <p class="seasons__legend"><span class="dot dot--2"></span>Best <span class="dot dot--1"></span>Fine <span class="dot dot--0"></span>Rainy or closed. A general guide only; weather changes year to year.</p>
+    <p class="seasons__legend"><span class="dot dot--2"></span>Best <span class="dot dot--1"></span>Fine <span class="dot dot--0"></span>Rainy or closed</p>
+  </div>
+</section>
+
+<section class="band band--stone">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="kicker">The monsoons</p><h2>Two seasons, two coasts</h2></div></div>
+    <div class="explain">
+      <article><p class="kicker">May to September</p><h3>South-west monsoon</h3><p>Rain in the south and west. The east and north are at their best.</p></article>
+      <article><p class="kicker">November to February</p><h3>North-east monsoon</h3><p>Rain in the north and east. The south, west and hills are clear.</p></article>
+      <article><p class="kicker">October</p><h3>In between</h3><p>Showers anywhere. Quieter, and lower prices.</p></article>
+    </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <div class="sec-head">
-      <h2>The two monsoons</h2>
-      <p>Rain usually comes in short, heavy afternoon showers rather than all-day downpours, so a “rainy” month is rarely a lost one.</p>
-    </div>
-    <div class="explain">
-      <article>
-        <h3>South-west monsoon</h3>
-        <p class="explain__when">About May to September</p>
-        <p>Brings rain to the west and south coasts and the hills. This is when the east coast, Trincomalee and the north are at their best.</p>
-      </article>
-      <article>
-        <h3>North-east monsoon</h3>
-        <p class="explain__when">About November to February</p>
-        <p>Brings rain to the north and east. The west and south coasts, Galle, Mirissa and the hills are dry and clear.</p>
-      </article>
-      <article>
-        <h3>In between</h3>
-        <p class="explain__when">October, and sometimes April</p>
-        <p>Storms can come anywhere on the island for a few weeks. Prices are lower and it’s quieter everywhere.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="band band--mist">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Wildlife and festivals</h2>
-      <p>Dates move a little each year. Ask us and we’ll check before you book.</p>
-    </div>
+    <div class="sec-head"><div><p class="kicker">Calendar</p><h2>Wildlife and festivals</h2></div></div>
     <ul class="calendar">
-      <li><strong>Dolphins at Kalpitiya</strong><span>November to April</span></li>
-      <li><strong>Blue whales off Mirissa</strong><span>November to April</span></li>
-      <li><strong>Whales off Trincomalee</strong><span>About March to August</span></li>
-      <li><strong>Kitesurfing at Kalpitiya</strong><span>May to October</span></li>
-      <li><strong>Migrant birds at Anawilundawa</strong><span>October to April</span></li>
-      <li><strong>Yala National Park</strong><span>Usually closed September to mid October</span></li>
-      <li><strong>Kandy Esala Perahera</strong><span>July or August</span></li>
-      <li><strong>Nallur festival, Jaffna</strong><span>About 25 days around August</span></li>
+      <li><strong>Dolphins, Kalpitiya</strong><span>Nov – Apr</span></li>
+      <li><strong>Blue whales, Mirissa</strong><span>Nov – Apr</span></li>
+      <li><strong>Whales, Trincomalee</strong><span>Mar – Aug</span></li>
+      <li><strong>Kitesurfing, Kalpitiya</strong><span>May – Oct</span></li>
+      <li><strong>Migrant birds, Anawilundawa</strong><span>Oct – Apr</span></li>
+      <li><strong>Yala National Park</strong><span>Closed Sep – mid Oct</span></li>
+      <li><strong>Esala Perahera, Kandy</strong><span>Jul or Aug</span></li>
+      <li><strong>Nallur festival, Jaffna</strong><span>Around Aug</span></li>
     </ul>
   </div>
 </section>
@@ -97,17 +78,17 @@
 
 <footer class="foot">
   <div class="wrap foot__grid">
-    <div>
-      <span class="logo-slot logo-slot--foot" aria-hidden="true">Logo</span>
-      <p>Green Expo Journeys is part of S N S Ceylon Exports (Pvt) Ltd, exporters of Sri Lankan coconut, spice, tea and traditional foods since 2012.</p>
+    <div class="foot__brand">
+      <span class="wordmark"><span class="wordmark__name">Green Expo</span><span class="wordmark__sub">Journeys</span></span>
+      <p>Private journeys in Sri Lanka from Green Expo, exporters of coconut, spice and tea since 2012.</p>
     </div>
     <div>
-      <p class="foot__h">Visit</p>
-      <ul><li><a href="places.html">Places</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="when-to-go.html">When to go</a></li><li><a href="about.html">About us</a></li><li><a href="plan.html">Plan a trip</a></li></ul>
+      <p class="foot__h">Explore</p>
+      <ul><li><a href="places.html">Places</a></li><li><a href="journeys.html">Journeys</a></li><li><a href="when-to-go.html">When to go</a></li><li><a href="about.html">About</a></li></ul>
     </div>
     <div>
       <p class="foot__h">Contact</p>
-      <ul><li><a href="mailto:info@greenexpolk.com">info@greenexpolk.com</a></li><li><a href="https://wa.me/94711486677">+94 71 148 6677</a></li><li>85 Katukenda East, Dankotuwa</li><li><a href="https://www.greenexpolk.com">Our export business ↗</a></li></ul>
+      <ul><li><a href="mailto:info@greenexpolk.com">info@greenexpolk.com</a></li><li><a href="https://wa.me/94711486677">+94 71 148 6677</a></li><li>Dankotuwa, Sri Lanka</li></ul>
     </div>
   </div>
   <div class="wrap foot__credits">
@@ -125,14 +106,14 @@
   <button type="button" class="tray__clear" id="trayClear">Clear</button>
 </div>
 
-<button type="button" class="totop" id="toTop" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
-
-<a class="wa" href="https://wa.me/94711486677" aria-label="Chat with us on WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5Zm-3 3.5c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.1-.4-.3-.4-.5-.4H9Z"/></svg>
-  <span>WhatsApp</span>
-</a>
+<div class="floaters">
+  <button type="button" class="totop" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <a class="wa" href="https://wa.me/94711486677" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5Zm-3 3.5c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3-1.6-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.1-.4-.3-.4-.5-.4H9Z"/></svg>
+  </a>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

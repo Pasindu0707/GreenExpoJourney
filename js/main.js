@@ -159,8 +159,8 @@
           <article class="place" id="place-${p.id}">
             <img src="assets/img/${p.img}" alt="" loading="lazy">
             <div>
+              <p class="kicker">${p.tag}</p>
               <h3>${p.name}</h3>
-              <p class="place__tag">${p.tag}</p>
               <p class="place__text">${p.text}</p>
               <div class="place__foot">
                 <p class="place__getting">${p.getting}</p>
@@ -242,12 +242,10 @@
   const regionCards = $('#regionCards');
   if (regionCards) {
     regionCards.innerHTML = REGIONS.map((r) => {
-      const names = PLACES.filter((p) => p.region === r.id).map((p) => p.name);
-      return `<a class="rcard" href="places.html#region-${r.id}">
+      const n = PLACES.filter((p) => p.region === r.id).length;
+      return `<a class="rcard" role="listitem" href="places.html#region-${r.id}">
         <img src="assets/img/${r.img}" alt="" loading="lazy">
-        <h3>${r.name}</h3>
-        <p>${names.join(', ')}</p>
-        <p class="rcard__count">${names.length} places →</p>
+        <span class="rcard__body"><span class="rcard__title">${r.name}</span><span class="rcard__count">${n} places →</span></span>
       </a>`;
     }).join('');
   }
@@ -256,10 +254,36 @@
     const mi = new Date().getMonth();
     $('#monthTitle').textContent = `Going in ${MONTHS[mi]}?`;
     const VERDICT = ['Rainy', 'Fine', 'Best time'];
-    thisMonth.innerHTML = [...SEASONS].sort((a, b) => b.m[mi] - a.m[mi]).map((r) => {
+    thisMonth.innerHTML = [...SEASONS].sort((a, b) => b.m[mi] - a.m[mi]).slice(0, 4).map((r) => {
       const text = (r.label && r.label(mi)) || VERDICT[r.m[mi]];
-      return `<li class="l${r.m[mi]}"><div><strong>${r.name}</strong><small>${r.where}</small></div><span>${text}</span></li>`;
+      return `<li class="l${r.m[mi]}"><strong>${r.name}</strong><span>${text}</span></li>`;
     }).join('');
+  }
+
+  /* ---------- Rails: swipe rows with arrows and dots on smaller screens ---------- */
+  $$('[data-rail]').forEach((rail) => {
+    const track = $('.rail__track', rail);
+    const items = [...track.children];
+    const dots = $('.rail__dots', rail);
+    const prev = $('.rail__prev', rail);
+    const next = $('.rail__next', rail);
+    if (!items.length) return;
+    dots.innerHTML = items.map(() => '<i></i>').join('');
+    const step = () => items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16);
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const i = max <= 2 ? 0 : Math.round(track.scrollLeft / step());
+      [...dots.children].forEach((d, k) => d.classList.toggle('is-on', k === Math.min(i, items.length - 1)));
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
+    track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+  {
   }
 
   /* ---------- When to go: month picker ---------- */
