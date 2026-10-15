@@ -259,29 +259,17 @@
   {
   }
 
-  /* ---------- When to go: month picker ---------- */
+  /* ---------- When to go: month picker (markup comes from data.js; the build pre-renders it) ---------- */
   const monthsEl = $('#months');
   if (monthsEl) {
-    const VERDICT = ['Rainy', 'Fine', 'Best time'];
     const tableEl = $('#seasonTable');
     const renderSeason = (mi) => {
-      [...monthsEl.children].forEach((b, k) => { b.setAttribute('aria-selected', String(k === mi)); b.tabIndex = k === mi ? 0 : -1; });
-      tableEl.innerHTML = SEASONS.map((r) => {
-        const v = r.m[mi];
-        const text = (r.label && r.label(mi)) || VERDICT[v];
-        return `<div class="srow">
-          <p class="srow__name"><strong>${r.name}</strong><small>${r.where}</small></p>
-          <div class="srow__bar" aria-hidden="true">${r.m.map((x, k) => `<i class="l${x}${k === mi ? ' is-sel' : ''}"></i>`).join('')}</div>
-          <p class="srow__verdict l${v}">${text}</p>
-        </div>`;
-      }).join('');
+      monthsEl.innerHTML = window.monthButtonsHTML(mi);
+      tableEl.innerHTML = window.seasonRowsHTML(mi);
     };
-    MONTHS.forEach((m, i) => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = m.slice(0, 3);
-      b.setAttribute('aria-label', m);
-      b.addEventListener('click', () => renderSeason(i));
-      monthsEl.appendChild(b);
+    monthsEl.addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (b) renderSeason([...monthsEl.children].indexOf(b));
     });
     monthsEl.addEventListener('keydown', (e) => {
       const i = [...monthsEl.children].findIndex((b) => b.getAttribute('aria-selected') === 'true');
@@ -289,7 +277,8 @@
       if (next === null) return;
       e.preventDefault(); renderSeason(next); monthsEl.children[next].focus();
     });
-    renderSeason(new Date().getMonth());
+    const now = new Date().getMonth();
+    if (monthsEl.querySelector('[aria-selected="true"]') !== monthsEl.children[now]) renderSeason(now);
   }
 
   /* ---------- Plan page: picked places + form ---------- */

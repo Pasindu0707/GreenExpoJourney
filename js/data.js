@@ -96,3 +96,19 @@ window.SEASONS = [
   { name: 'Yala National Park', where: 'Closed Sep to mid Oct', m: [2, 2, 2, 2, 2, 2, 2, 1, 0, 0, 1, 2],
     label: (i) => (i === 8 || i === 9 ? 'Closed' : null) },
 ];
+
+/* Month table markup, shared by the browser (main.js) and the page build, so the
+   table is in the HTML from the start and doesn't shift the page when JavaScript runs. */
+window.MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+window.monthButtonsHTML = (mi) => window.MONTH_NAMES.map((m, i) =>
+  `<button type="button" role="tab" aria-label="${m}" aria-selected="${i === mi}" tabindex="${i === mi ? 0 : -1}">${m.slice(0, 3)}</button>`).join('');
+window.seasonRowsHTML = (mi) => {
+  const VERDICT = ['Rainy', 'Fine', 'Best time'];
+  return window.SEASONS.map((r) => {
+    const v = r.m[mi];
+    const text = (r.label && r.label(mi)) || VERDICT[v];
+    return `<div class="srow"><p class="srow__name"><strong>${r.name}</strong><small>${r.where}</small></p>`
+      + `<div class="srow__bar" aria-hidden="true">${r.m.map((x, k) => `<i class="l${x}${k === mi ? ' is-sel' : ''}"></i>`).join('')}</div>`
+      + `<p class="srow__verdict l${v}">${text}</p></div>`;
+  }).join('');
+};
