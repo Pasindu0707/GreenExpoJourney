@@ -130,7 +130,8 @@
     const S = 8426.545965812791, TX = -11669.51180434274, TY = 1472.8176306169091;
     const project = (lon, lat) => [S * lon * Math.PI / 180 + TX, -S * Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)) + TY];
     PLACES.forEach((p) => { [p.x, p.y] = project(p.lon, p.lat); });
-    const LEFT = new Set(['negombo', 'chilaw', 'kalpitiya', 'matale', 'kandy', 'galle']);
+    // Label position around each pin, from data.js: l(eft), r(ight), t(op) or b(ottom).
+    const LABEL = { l: [-10, 4.5, 'end'], r: [10, 4.5, 'start'], t: [0, -11, 'middle'], b: [0, 19, 'middle'], bl: [-4, 17, 'end'], br: [4, 17, 'start'] };
     const svg = $('#map');
     const NS = 'http://www.w3.org/2000/svg';
     $('#mapLoop').setAttribute('d', smooth(PLACES));
@@ -144,9 +145,8 @@
       g.setAttribute('tabindex', '0');
       g.setAttribute('role', 'button');
       g.setAttribute('aria-label', `${p.name}: show details`);
-      const left = LEFT.has(p.id);
-      const dy = p.id === 'katunayake' ? 14 : p.id === 'dankotuwa' ? -3 : 4.5;
-      g.innerHTML = `<circle r="5"/><text x="${left ? -10 : 10}" y="${dy}" text-anchor="${left ? 'end' : 'start'}">${p.name}</text>`;
+      const [lx, ly, anchor] = LABEL[p.label] || LABEL.r;
+      g.innerHTML = `<circle r="5"/><text x="${lx}" y="${ly}" text-anchor="${anchor}">${p.name}</text>`;
       const go = () => {
         const card = document.getElementById(`place-${p.id}`);
         scrollToEl(card, cardOffset());

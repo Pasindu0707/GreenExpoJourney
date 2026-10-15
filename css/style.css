@@ -136,7 +136,11 @@ p { margin: 0; }
 .tile .kicker { color: #fff; opacity: .85; margin-bottom: 6px; }
 .tile__title { font: 300 clamp(1.8rem, 2.6vw, 2.4rem)/1 var(--serif); }
 
-/* Region cards (home) */
+/* Region cards (home): 3 x 2 grid on desktop */
+@media (min-width: 1001px) {
+  #regionCards { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #regionCards .rcard img { aspect-ratio: 3 / 2; }
+}
 .rcard { position: relative; display: block; text-decoration: none; color: #fff; overflow: hidden; border-radius: 2px; }
 .rcard img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 1.2s var(--ease); }
 .rcard:hover img { transform: scale(1.04); }
