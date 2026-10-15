@@ -107,12 +107,6 @@
   const togglePlace = (id) => { picked.has(id) ? picked.delete(id) : picked.add(id); renderTrip(); };
   if (tray) $('#trayClear').addEventListener('click', () => { picked.clear(); renderTrip(); });
 
-  // Responsive image attributes: phones get the 600/1200px copies made for each photo.
-  const img = (file, sizes) => {
-    const n = file.replace(/\.jpg$/, '');
-    return `src="assets/img/${file}" srcset="assets/img/${n}-600.jpg 600w, assets/img/${n}-1200.jpg 1200w, assets/img/${file} 2000w" sizes="${sizes}"`;
-  };
-
   const smooth = (pts) => {
     if (pts.length < 2) return '';
     let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
@@ -158,27 +152,10 @@
       pins[p.id] = g;
     });
 
-    list.innerHTML = REGIONS.map((r) => `
-      <div class="chapter" data-region="${r.id}" id="region-${r.id}">
-        <div class="chapter__head"><h2>${r.name}</h2><p>${r.blurb}</p></div>
-        ${PLACES.filter((p) => p.region === r.id).map((p) => `
-          <article class="place" id="place-${p.id}">
-            <img ${img(p.img, '(max-width: 640px) 76px, 148px')} alt="" loading="lazy">
-            <div>
-              <p class="kicker">${p.tag}</p>
-              <h3>${p.name}</h3>
-              <p class="place__text">${p.text}</p>
-              <div class="place__foot">
-                <p class="place__getting">${p.getting}</p>
-                <button type="button" class="add" data-id="${p.id}" aria-pressed="false">Add to my trip</button>
-              </div>
-            </div>
-          </article>`).join('')}
-      </div>`).join('');
+    // The region and place cards are written into places.html by the build script (better for search engines).
     list.addEventListener('click', (e) => { const b = e.target.closest('.add'); if (b) togglePlace(b.dataset.id); });
 
     const regionNav = $('#regionNav');
-    regionNav.innerHTML = REGIONS.map((r) => `<button type="button" data-region="${r.id}">${r.name}</button>`).join('');
     regionNav.addEventListener('click', (e) => {
       const b = e.target.closest('button');
       if (b) scrollToEl(document.getElementById(`region-${b.dataset.region}`), 20);
@@ -244,17 +221,7 @@
     }
   }
 
-  /* ---------- Home: region cards + this month ---------- */
-  const regionCards = $('#regionCards');
-  if (regionCards) {
-    regionCards.innerHTML = REGIONS.map((r) => {
-      const n = PLACES.filter((p) => p.region === r.id).length;
-      return `<a class="rcard" role="listitem" href="places.html#region-${r.id}">
-        <img ${img(r.img, '(max-width: 640px) 74vw, (max-width: 1000px) 44vw, 25vw')} alt="" loading="lazy">
-        <span class="rcard__body"><span class="rcard__title">${r.name}</span><span class="rcard__count">${n} places →</span></span>
-      </a>`;
-    }).join('');
-  }
+  /* ---------- Home: this month ---------- */
   const thisMonth = $('#thisMonth');
   if (thisMonth) {
     const mi = new Date().getMonth();

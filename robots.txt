@@ -1,0 +1,5 @@
+# Green Expo Journeys
+User-agent: *
+Allow: /
+
+Sitemap: https://pasindu0707.github.io/GreenExpoJourney/sitemap.xml

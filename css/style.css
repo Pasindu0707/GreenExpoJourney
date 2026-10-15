@@ -29,7 +29,10 @@ html { -webkit-text-size-adjust: 100%; scroll-padding-top: var(--nav-h); }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.7 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
+/* <picture> wrappers don't create a box, so layout rules apply to the <img> as before */
+picture { display: contents; }
+picture > source { display: none; }
 a { color: inherit; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; margin: 0; }
 h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); }
@@ -58,6 +61,8 @@ p { margin: 0; }
 .btn--light { background: #fff; color: var(--forest); border-color: #fff; }
 .btn--light:hover { background: var(--yellow); border-color: var(--yellow); color: var(--forest); }
 .btn--line { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.btn--outline { background: transparent; color: var(--forest); }
+.btn--outline:hover { background: var(--forest); color: #fff; }
 .btn--line:hover { background: #fff; color: var(--forest); border-color: #fff; }
 .btn--sm { padding: 12px 18px; }
 .btn--block { width: 100%; }
@@ -128,11 +133,11 @@ p { margin: 0; }
 .rail__btn:disabled { opacity: .3; cursor: default; }
 
 /* Image tiles (crops) */
-.tile { position: relative; margin: 0; overflow: hidden; border-radius: 2px; }
+.tile { position: relative; display: block; margin: 0; overflow: hidden; border-radius: 2px; text-decoration: none; }
 .tile img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform 1.2s var(--ease); }
 .tile:hover img { transform: scale(1.04); }
 .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,24,18,0) 55%, rgba(10,24,18,.7) 100%); }
-.tile figcaption { position: absolute; left: 24px; right: 24px; bottom: 22px; z-index: 1; color: #fff; }
+.tile__cap { position: absolute; left: 24px; right: 24px; bottom: 22px; z-index: 1; color: #fff; }
 .tile .kicker { color: #fff; opacity: .85; margin-bottom: 6px; }
 .tile__title { font: 300 clamp(1.8rem, 2.6vw, 2.4rem)/1 var(--serif); }
 
@@ -169,7 +174,7 @@ p { margin: 0; }
 
 /* Photo CTA */
 .cta-photo { position: relative; min-height: clamp(420px, 70svh, 680px); display: flex; align-items: center; color: #fff; overflow: hidden; background: var(--forest); }
-.cta-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cta-photo > picture > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .cta-photo::after { content: ""; position: absolute; inset: 0; background: rgba(10,24,18,.45); }
 .cta-photo__inner { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .cta-photo h2 { font-size: clamp(2.1rem, 5vw, 4.2rem); font-weight: 300; max-width: 16ch; }
@@ -215,8 +220,8 @@ p { margin: 0; }
 /* Journeys page */
 .trows { display: grid; gap: clamp(64px, 8vw, 120px); }
 .trow { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: center; scroll-margin-top: calc(var(--nav-h) + 24px); }
-.trow:nth-child(even) > img { order: 2; }
-.trow > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
+.trow:nth-child(even) > picture > img { order: 2; }
+.trow > picture > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
 .trow h2 { font-weight: 300; }
 .trow__text { color: var(--muted); margin-top: 14px; font-size: 1.05rem; }
 .trow__when { margin-top: 20px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; gap: 16px; }
@@ -306,7 +311,7 @@ p { margin: 0; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: #fff; }
 .foot__credits { margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(246,246,242,.12); display: flex; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; font-size: .8rem; }
-.foot__credits a { color: var(--yellow); }
+.foot__credits a { color: var(--yellow); text-decoration: underline; text-underline-offset: 2px; }
 .foot details { max-width: 72ch; }
 .foot summary { cursor: pointer; }
 .foot details p { margin-top: 10px; opacity: .7; }
@@ -316,6 +321,31 @@ main > section { position: relative; }
 main > section::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--yellow); transform: scaleY(0); transform-origin: top; transition: transform .6s ease; z-index: 2; pointer-events: none; }
 main > section.is-current::before { transform: scaleY(1); }
 .hero.is-current::before, .page-hero.is-current::before { display: none; }
+
+/* Journeys: places on this trip */
+.trow__stops { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 16px; font-size: .95rem; }
+.trow__stops > span:first-child { font: 600 .7rem/1.9 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--green); flex: none; }
+.trow__stops a { color: var(--ink); text-underline-offset: 3px; }
+.trow__stops-list { min-width: 0; }
+.trow__stops a:hover { color: var(--green); }
+.explain a, .calendar a, .about__story a { color: inherit; text-underline-offset: 3px; }
+.calendar a:hover, .explain a:hover { color: var(--green); }
+
+/* FAQ */
+.faq { max-width: 900px; }
+.faq__item { border-top: 1px solid var(--line); }
+.faq__item:last-child { border-bottom: 1px solid var(--line); }
+.faq__item summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font: 400 1.25rem/1.35 var(--serif); }
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font: 400 1.4rem var(--sans); color: var(--green); }
+.faq__item[open] summary::after { content: "–"; }
+.faq__item p { color: var(--muted); padding: 0 40px 24px 0; max-width: 64ch; }
+
+/* 404 */
+.notfound { min-height: 100svh; display: flex; align-items: center; padding: 80px 0; }
+.notfound h1 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 300; margin-bottom: 16px; }
+.notfound p { color: var(--muted); }
+.notfound__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
 
 /* Tray, back-to-top, WhatsApp */
 .tray { position: fixed; z-index: 60; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translateX(-50%); display: flex; align-items: center; gap: 16px; background: var(--ink); color: var(--paper); border-radius: 2px; padding: 8px 8px 8px 20px; box-shadow: 0 16px 40px -12px rgba(0,0,0,.5); font-size: .9rem; white-space: nowrap; }
@@ -368,7 +398,7 @@ main > section.is-current::before { transform: scaleY(1); }
   .regions { display: none; }
   .places__list { padding-top: 28px; }
   .trow, .trow:nth-child(even) { grid-template-columns: 1fr; }
-  .trow:nth-child(even) > img { order: 0; }
+  .trow:nth-child(even) > picture > img { order: 0; }
   .explain { grid-template-columns: 1fr; gap: 28px; }
   .calendar { grid-template-columns: 1fr; }
   .foot__grid { grid-template-columns: 1fr 1fr; }
