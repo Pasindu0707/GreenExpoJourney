@@ -28,7 +28,7 @@ window.PLACES = [
     tag: 'Reef and whales', text: 'Clifftop Koneswaram, snorkelling at Pigeon Island and whales in season.', getting: '4 h from Jaffna' },
   { id: 'sigiriya', name: 'Sigiriya', region: 'hills', lat: 7.957, lon: 80.760, img: 'sigiriya.jpg',
     tag: 'Rock fortress', text: 'The 5th-century citadel. Climb it at first light.', getting: '2 h from Trincomalee' },
-  { id: 'matale', name: 'Matale', region: 'hills', lat: 7.470, lon: 80.620, img: 'cinnamon.jpg',
+  { id: 'matale', name: 'Matale', region: 'hills', lat: 7.470, lon: 80.620, img: 'spice-garden.jpg',
     tag: 'Spice gardens', text: 'Cinnamon, cardamom, nutmeg and pepper, grown side by side.', getting: '1.5 h from Sigiriya' },
   { id: 'kandy', name: 'Kandy', region: 'hills', lat: 7.290, lon: 80.635, img: 'kandy.jpg',
     tag: 'The hill capital', text: 'Evening puja at the Temple of the Tooth, then the lake.', getting: '40 min from Matale' },

@@ -28,5 +28,5 @@ All colors live as CSS variables at the top of `css/style.css` — swap them whe
 ## Before launch
 - Journey itineraries, drive times and place descriptions are researched proposals — confirm with operations; add prices if wanted.
 - Enquiry form opens the visitor's email app (mailto). Swap for Formspree/Netlify Forms or a backend for proper capture.
-- Photos are Wikimedia Commons (credits in footer, several CC BY-SA). Replace with your own photography when possible.
+- Photos are from Unsplash (free under the Unsplash License; photographers credited in the footer). Replace with your own photography when possible.
 - Logo: each page shows a temporary typed wordmark ("Green Expo Journeys", `.wordmark` in the header and footer). Replace it with `<img src="assets/logo.svg" alt="Green Expo Journeys">` once the logo is final.
