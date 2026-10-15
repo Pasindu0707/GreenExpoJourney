@@ -107,6 +107,12 @@
   const togglePlace = (id) => { picked.has(id) ? picked.delete(id) : picked.add(id); renderTrip(); };
   if (tray) $('#trayClear').addEventListener('click', () => { picked.clear(); renderTrip(); });
 
+  // Responsive image attributes: phones get the 600/1200px copies made for each photo.
+  const img = (file, sizes) => {
+    const n = file.replace(/\.jpg$/, '');
+    return `src="assets/img/${file}" srcset="assets/img/${n}-600.jpg 600w, assets/img/${n}-1200.jpg 1200w, assets/img/${file} 2000w" sizes="${sizes}"`;
+  };
+
   const smooth = (pts) => {
     if (pts.length < 2) return '';
     let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
@@ -157,7 +163,7 @@
         <div class="chapter__head"><h2>${r.name}</h2><p>${r.blurb}</p></div>
         ${PLACES.filter((p) => p.region === r.id).map((p) => `
           <article class="place" id="place-${p.id}">
-            <img src="assets/img/${p.img}" alt="" loading="lazy">
+            <img ${img(p.img, '(max-width: 640px) 76px, 148px')} alt="" loading="lazy">
             <div>
               <p class="kicker">${p.tag}</p>
               <h3>${p.name}</h3>
@@ -244,7 +250,7 @@
     regionCards.innerHTML = REGIONS.map((r) => {
       const n = PLACES.filter((p) => p.region === r.id).length;
       return `<a class="rcard" role="listitem" href="places.html#region-${r.id}">
-        <img src="assets/img/${r.img}" alt="" loading="lazy">
+        <img ${img(r.img, '(max-width: 640px) 74vw, (max-width: 1000px) 44vw, 25vw')} alt="" loading="lazy">
         <span class="rcard__body"><span class="rcard__title">${r.name}</span><span class="rcard__count">${n} places →</span></span>
       </a>`;
     }).join('');
